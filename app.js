@@ -283,8 +283,6 @@ function setLocationInMap(lng, ltd) {
 
 
 
-//
-
 
 
 
