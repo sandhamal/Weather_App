@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEATHER APP</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <!-- ////////////////////////////////////// Nav Bar //////////////////////////////////////////////// -->
+
+  <div class="container10">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="login">
+          <button type="button" class="btn btn-dark">Login</button>
+        </div>
+
+        <div class="signup">
+          <button type="button" class="btn btn-success">Sign Up</button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+
+            <div class="container11">
+
+              <img src="images/county12.png" class="img-rounded" alt="Cinque Terre" width="300" height="50">
+            </div>
+
+            <div class="container12">
+
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#histroy">Historical</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#pricing">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About Us</a>
+              </li>
+            </div>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+
+
+  <!-- //////////////////////////////////////////// Main Data   /////////////////////////////////////////////////////////// -->
+
+
+  <section class="maindata">
+
+
+    <div class="header">
+      <div>
+        <input class="searchCity" type="text" name="" id="input" placeholder="Enter city name">
+        <button id="search" onclick="searchByCity()">Search</button></input>
+      </div>
+    </div>
+
+
+
+
+    <main>
+      <div class="weather">
+        <h2 id="city">Delhi,IN</h2>
+        <div class="temp-box">
+          <img src="/weathericon.png" alt="" id="img">
+
+        </div>
+        <span id="clouds">Broken Clouds</span>
+        <p id="temperature">26 °C</p>
+
+
+        <p id="humidity" class="humidity">50%</p>
+        <p>Humidity</p>
+
+
+        <p id="wind" class="wind">15%</p>
+        <p>Wind Speed</p>
+      </div>
+
+      </div>
+
+      <div class="divider1"></div>
+
+      <div class="forecstH">
+        <p class="cast-header">Upcoming forecast</p>
+        <div class="templist">
+
+          <div class="next">
+            <div>
+              <p class="time">8:30 PM</p>
+              <p>29 °C / 29 °C</p>
+            </div>
+            <p class="desc">Light Rain</p>
+          </div>
+
+          <div class="next">
+            <div>
+              <p class="time">8:30 PM</p>
+              <p>29 °C / 29 °C</p>
+            </div>
+            <p class="desc">Light Rain</p>
+          </div>
+
+          <div class="next">
+            <div>
+              <p class="time">8:30 PM</p>
+              <p>29 °C / 29 °C</p>
+            </div>
+            <p class="desc">Light Rain</p>
+          </div>
+
+          <div class="next">
+            <div>
+              <p class="time">8:30 PM</p>
+              <p>29 °C / 29 °C</p>
+            </div>
+            <p class="desc">Light Rain</p>
+          </div>
+
+          <div class="next">
+            <div>
+              <p class="time">8:30 PM</p>
+              <p>29 °C / 29 °C</p>
+            </div>
+            <p class="desc">Light Rain</p>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+  </section>
+
+  <div class="container13">
+
+    <section class="maindata2">
+
+      <div class="forecstD">
+
+        <p class="cast-header"> Next 4 days forecast and loacation</p>
+        <div class="weekF">
+
+          <div class="dayF">
+            <p class="date">Sun Jul 03 2022</p>
+            <p>31 °C / 31 °C</p>
+            <p class="desc">Overcast Clouds</p>
+          </div>
+
+          <div class="dayF">
+            <p class="date">Sun Jul 03 2022</p>
+            <p>31 °C / 31 °C</p>
+            <p class="desc">Overcast Clouds</p>
+          </div>
+
+          <div class="dayF">
+            <p class="date">Sun Jul 03 2022</p>
+            <p>31 °C / 31 °C</p>
+            <p class="desc">Overcast Clouds</p>
+          </div>
+
+          <div class="dayF">
+            <p class="date">Sun Jul 03 2022</p>
+            <p>31 °C / 31 °C</p>
+            <p class="desc">Overcast Clouds</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="maindata3">
+
+      <div class="section2">
+
+        <div id="map">
+
+        </div>
+
+    </section>
+
+  </div>
+
+  <!-- //////////////////////////////////////////// Historycal Data   /////////////////////////////////////////////////////////// -->
+
+
+
+  <div class="container14" id="histroy">
+
+
+
+    <div class="container16">
+      <h2 class="text-3xl font-medium p-8 border-b">History</h2>
+      <p class="px-8 mt-8">Search withing 7 days to get Historical weather conditions.</p>
+      <div
+        class="date-finder mx-auto flex flex-col gap-4 sm:flex-row items-center justify-between px-16 mt-4 pb-8 w-full text-lg">
+        <input type="date" id="dob" class="border-2 p-2 dark:text-[#212121]">
+        <button type="submit"
+          class="subButton text-[#0059b2] dark:bg-textGrey dark:text-lightPurple dark:hover:bg-darkPurple dark:hover:text-textGrey hover:text-white border border-[#0059b2] hover:bg-[#0059b2] dark:border-lightPurple dark:hover:border-darkPurple focus:ring-4 focus:outline-none focus:ring-[#0059b2] dark:focus:ring-darkPurple transition-all font-medium rounded-lg text-md px-4 py-2">Select
+          Date</button>
+      </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="container15">
+
+      <div class="card16">
+
+
+        <li class=" w-full px-4 py-2 border-b border-gray-200 flex justify-between items-center">
+          <div class="dateHistory">2023-05-26</div>
+        </li>
+
+      </div>
+
+
+
+      <div class="card16">
+
+        <li class="w-full px-4 py-2 border-b border-gray-200 flex justify-between items-center">
+          <div class="div conHistory">Sunny</div>
+          <div class="div"><img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" class="w-20 imgHistory">
+          </div>
+
+
+
+          <div class="div">
+            <span class="text-2xl tempHistory">30</span>
+            <span class="text-2xl">&deg;</span>
+            <span class="text-2xl ">C</span>
+          </div>
+
+
+
+        </li>
+      </div>
+
+      <div class="card16">
+
+        <li class="w-full px-4 py-2 border-b border-gray-200 flex justify-between items-center">
+          <div class="">Sunrise</div>
+          <div class="">
+            <span class="riseHistory">05:50 AM</span>
+          </div>
+        </li>
+
+      </div>
+
+      <div class="card16">
+
+        <li class="w-full px-4 py-2 border-b border-gray-200 flex justify-between items-center">
+          <div class="">Sunset</div>
+          <div class="">
+            <span class="setHistory">06:20 PM</span>
+          </div>
+        </li>
+
+      </div>
+
+      <div class="card16">
+
+        <li class="w-full px-4 py-2 border-b border-gray-200 flex justify-between items-center">
+          <div class="">Max Temp</div>
+          <div class="">
+            <span class="maxtempHistory">30</span>
+            <span class="">&deg;</span>
+            <span class="">C</span>
+          </div>
+        </li>
+
+      </div>
+
+      <div class="card16">
+
+        <li class="w-full px-4 py-2 border-b border-gray-200 flex justify-between items-center">
+          <div class="">Min Temp</div>
+          <div class="">
+            <span class="mintempHistory">21</span>
+            <span class="">&deg;</span>
+            <span class="">C</span>
+          </div>
+        </li>
+      </div>
+
+      <div class="card16">
+
+        <li class="w-full px-4 py-2 border-b border-gray-200 flex justify-between items-center">
+          <div class="">Humidity</div>
+          <div class="">
+            <span class="humHistory">80</span>
+            <span class="">%</span>
+          </div>
+        </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ///////////////////////////////////////////////////////////Pricing ///////////////////////////////////////////////////////////////////////////////// -->
+
+
+  <div class="container5">
+
+    <section class="pricing" id="pricing">
+      <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Quick and Easy
+          Signup
+          for your Choice</h2>
+
+      </div>
+
+      <div class="container5">
+
+        <div class="row">
+          <div class="col-lg-4 col-md-12 mb-4">
+            <div class="h-100 flip-card">
+              <div class="flip-card-inner">
+
+                <div class="flip-card-front">
+
+                  <span class="price">$8</span><br>/month
+                  <br>
+                  <h2 class="card-title">Basic</h2>
+                  <small>Individual</small>
+                </div>
+                <div class="flip-card-back">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                          d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                      </svg> upto 500 calls per month</li>
+                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                          d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                      </svg> Realtime Weather</li>
+                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                          d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                      </svg> Forecast Weather: 3 days</li>
+                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                          d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                      </svg> Historical Weather: Last 5 days</li>
+                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                          d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                      </svg> Weather Alerts: No</li>
+                  </ul>
+                  <button class="my-5 btn btn-outline-success btn-lg">Select</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 mb-4">
+            <div class="h-100 flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+
+                  <span class="price">$20</span><br>/month
+                  <br>
+                  <h2 class="card-title">Standard</h2>
+                  <small>Small Business</small>
+                </div>
+                <div class="flip-card-back">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                          d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                      </svg> upto 5000 calls per month</li>
+                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                          d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                      </svg> Realtime Weather</li>
+                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                          d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                      </svg> Forecast Weather: 7 days</li>
+                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                          d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                      </svg> Historical Weather: Last 14 days</li>
+                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                          d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                      </svg> Weather Alerts: No</li>
+                  </ul>
+                  <button class="my-5 btn btn-outline-success btn-lg">Select</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-12 mb-4">
+            <div class="h-100 flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+
+                  <span class="price">$40</span><br>/month
+                  <br>
+                  <h2 class="card-title">Premium</h2>
+                  <small>Large Company</small>
+                </div>
+                <div class="flip-card-back">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                          d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                      </svg> Unlimited calls per month</li>
+                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                          d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                      </svg> Realtime Weather</li>
+                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                          d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                      </svg> Forecast Weather: 30 days</li>
+                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                          d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                      </svg> Historical Weather: Last 30 days</li>
+                    <li class="list-group-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+                        <path
+                          d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
+                      </svg> Weather Alerts: Yes</li>
+                  </ul>
+                  <button class="my-5 btn btn-outline-success btn-lg">Select</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- //////////////////////////////////     Contact Us   /////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+  <div class="container17">
+
+    <div class="container d-flex justify-content-center" id="contact">
+      <div class="contact px-5 py-5 w-100">
+
+        <h4>Contact for any inquary</h4>
+
+
+        <div class="row">
+          <div class="col-md-6"> <input type="text" class="form-control" placeholder="name" /> </div>
+          <div class="col-md-6"> <input type="text" class="form-control" placeholder="phone" /> </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6"> <input type="text" class="form-control" placeholder="email" /> </div>
+          <div class="col-md-6"> <input id="date" type="text" class="form-control"
+              placeholder="When can we call you?" /> </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-md-12">
+            <textarea rows="6" class="form-control" placeholder="Let us know how can we help you?"></textarea>
+          </div>
+
+        </div>
+        <div class="pull-left">
+          <button class="btn btn-success mt-2 px-5">Send Message <i
+              class="fa fa-long-arrow-right ml-2 mt-1"></i></button>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ////////////////////////////////   Footer       ////////////////////////////////////////////////////////////////////////////////// -->
+
+
+  <!-- Footer -->
+
+  <div class="container21">
+    <footer class="bg-dark text-center text-white" id="about">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <p class="pt-2">
+          <strong>GET CONNECTED WITH US ON SOCIAL NETWORKS</strong>
+        </p>
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+              class="fab fa-facebook-f"></i></a>
+
+          <!-- Twitter -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+          <!-- Google -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+          <!-- Instagram -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+          <!-- Linkedin -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+              class="fab fa-linkedin-in"></i></a>
+
+          <!-- Github -->
+          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+        </section>
+        <!-- Section: Social media -->
+
+
+        <!-- Section: Form -->
+
+        <!-- Section: Text -->
+
+        <!-- Section: Text -->
+
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                COMPANY
+              </h6>
+              <p>
+                <i>About Us</i>
+              </p>
+              <p>
+                <i>Digital Advertising</i>
+              </p>
+              <p>
+                <i>Careers</i>
+              </p>
+              <p>
+                <i>Press</i>
+              </p>
+              <p>
+                <i>Contact Us</i>
+              </p>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                PRODUCTS & SERVICES
+              </h6>
+              <p>
+                <i>For Business</i>
+              </p>
+              <p>
+                <i>Countyweather APIs</i>
+              </p>
+              <p>
+                <i>Countyweather Connect</i>
+              </p>
+              <p>
+                <i> Podcast</i>
+              </p>
+              <p>
+                <i> RealFeel® and RealFeel Shade™</i>
+              </p>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                APPS & DOWNLOAD
+              </h6>
+              <p>
+                <i>iPhone App</i>
+              </p>
+              <p>
+                <i>Android App</i>
+              </p>
+              <p>
+                <i>See all Apps & Downloads</i>
+              </p>
+
+              <p>
+                <i> Support</i>
+              </p>
+              <p>
+                <i>More Details</i>
+              </p>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold mb-4">
+                MORE
+              </h6>
+              <p>
+                <i>Countyweather Ready</i>
+              </p>
+              <p>
+                <i>Health</i>
+              </p>
+              <p>
+                <i>Hurricane</i>
+              </p>
+
+              <p>
+                <i> Severe Weather</i>
+              </p>
+              <p>
+                <i>Weather News</i>
+              </p>
+            </div>
+        </section>
+        <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+      </div>
+      <section class="mb-4">
+        <p>
+          © 2023 Countyweather, Inc. "Countyweather" And Sun Design Are Registered Trademarks Of Countyweather, Inc. All
+          Rights Reserved..
+        </p>
+      </section>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        Terms Of Use | Privacy Policy | Cookie Policy
+
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="scripts/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+  <script src="/app.js"></script>
+</body>
+
+</html>
