@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
             let lon = position.coords.longitude;
             let lat = position.coords.latitude;
             const url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&` +
-             `lon=${lon}&appid=${apikey}`;
+                `lon=${lon}&appid=${apikey}`;
 
             fetch(url).then((res) => {
                 return res.json();
@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
 
 function searchByCity() {
     var place = document.getElementById('input').value;
-   
+
     var urlsearch = `http://api.openweathermap.org/data/2.5/weather?q=${place}&` + `appid=${apikey}`;
 
     fetch(urlsearch).then((res) => {
@@ -134,30 +134,30 @@ function hourForecast(forecast) {
     }
 }
 
-function dayForecast(forecast){
-    document.querySelector('.weekF').innerHTML=''
-    for (let i = 8; i < forecast.list.length; i+=8) {
+function dayForecast(forecast) {
+    document.querySelector('.weekF').innerHTML = ''
+    for (let i = 8; i < forecast.list.length; i += 8) {
         console.log(forecast.list[i]);
-        let div= document.createElement('div');
-        div.setAttribute('class','dayF');
-        
-        let day= document.createElement('p');
-        day.setAttribute('class','date')
-        day.innerText= new Date(forecast.list[i].dt*1000).toDateString(undefined,'Asia/Kolkata');
+        let div = document.createElement('div');
+        div.setAttribute('class', 'dayF');
+
+        let day = document.createElement('p');
+        day.setAttribute('class', 'date')
+        day.innerText = new Date(forecast.list[i].dt * 1000).toDateString(undefined, 'Asia/Kolkata');
         div.appendChild(day);
 
-        let temp= document.createElement('p');
-        temp.innerText= Math.floor((forecast.list[i].main.temp_max - 273))+ ' °C' + ' / ' + Math.floor((forecast.list[i].main.temp_min - 273))+ ' °C';
+        let temp = document.createElement('p');
+        temp.innerText = Math.floor((forecast.list[i].main.temp_max - 273)) + ' °C' + ' / ' + Math.floor((forecast.list[i].main.temp_min - 273)) + ' °C';
         div.appendChild(temp)
 
-        let description= document.createElement('p');
-        description.setAttribute('class','desc')
-        description.innerText= forecast.list[i].weather[0].description;
+        let description = document.createElement('p');
+        description.setAttribute('class', 'desc')
+        description.innerText = forecast.list[i].weather[0].description;
         div.appendChild(description);
 
         document.querySelector('.weekF').appendChild(div)
     }
-} 
+}
 
 /////////////////////////////////////////////////////////////////////////////Historial qata/////////////////////////////////////////////////////////////////////////////////////////
 
@@ -257,6 +257,7 @@ function getLocation() {
 
 
 
+
 var map = L.map('map').setView([51.505, -0.09], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -271,6 +272,8 @@ function setLocationInMap(lng, ltd) {
     marker.setLatLng([lng, ltd]).update();
     map.setView([lng, ltd], 15);
 }
+
+
 
 
 
